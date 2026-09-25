@@ -1,0 +1,16 @@
+{% extends 'juegos/base.html' %}
+
+{% block title %}Formulario de Juego{% endblock %}
+
+{% block content %}
+<h2>Formulario de Juego</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{% url 'lista_juegos' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
